@@ -3,7 +3,8 @@ import "./Header.css";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [showToggle, setShowToggle] = useState(window.innerWidth < 768); // 기본값 설정
+  const [showToggle, setShowToggle] = useState(window.innerWidth < 768);
+  const [isScrolled, setIsScrolled] = useState(false); // 스크롤 상태 추가
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
@@ -12,27 +13,30 @@ function Header() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setShowToggle(false); // 768px 이상에서는 메뉴 버튼 숨김
-        setIsNavOpen(false);  // 메뉴도 닫힘
+        setShowToggle(false);
+        setIsNavOpen(false);
       } else {
-        setShowToggle(true); // 768px 미만에서 메뉴 버튼 표시
+        setShowToggle(true);
       }
     };
 
-    // 화면 크기 변경을 감지하는 이벤트 리스너 추가
-    window.addEventListener("resize", handleResize);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0); // 스크롤 상태 업데이트
+    };
 
-    // 컴포넌트가 사라질 때 이벤트 리스너 제거
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll); // 스크롤 이벤트 리스너 추가
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll); // 컴포넌트 언마운트 시 리스너 제거
     };
   }, []);
 
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="logo">Leica</div>
       <div className={`navbar ${isNavOpen ? "active" : ""}`}>
-        {/* showToggle이 true일 때만 버튼 표시 */}
         {showToggle && (
           <button className="navbar-toggle" onClick={toggleNav}>
             {isNavOpen ? "✖" : "☰"}

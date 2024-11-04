@@ -1,11 +1,14 @@
 .products {
   padding: 2rem;
   text-align: center;
+  color: black;
+
 }
 
 .products h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: #fff;
 }
 
 .product-grid {
@@ -27,5 +30,5 @@
 .product-item img {
   max-width: 100%;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
