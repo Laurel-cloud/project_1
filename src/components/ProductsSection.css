@@ -1,0 +1,31 @@
+.products {
+  padding: 2rem;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  /* min-width: 400px; */
+}
+
+.product-item {
+  width: 300px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
