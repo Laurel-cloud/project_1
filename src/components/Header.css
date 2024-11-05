@@ -1,27 +1,83 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 왼쪽과 오른쪽에 요소를 배치 */
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 1); /* 기본적으로 투명도 없음 */
+  background-color: rgba(0, 0, 0, 1);
   color: #fff;
-  position: fixed; /* 상단에 고정 */
-  top: 0; /* 페이지 상단에 위치 */
+  position: fixed;
+  top: 0;
   left: 0;
-  right: 0; /* 전체 폭을 차지 */
-  z-index: 1000; /* 다른 요소 위에 오도록 설정 */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 아래쪽 그림자 추가 */
-  transition: background-color 0.3s ease; /* 배경색 전환 효과 추가 */
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
 }
 
-/* 스크롤했을 때의 스타일 */
 .header.scrolled {
-  background-color: rgba(0, 0, 0, 0.8); /* 약간의 투명도 추가 */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.header .logo {
+.left-header {
+  display: flex;
+  align-items: center; /* 로고와 내비게이션을 수직 중앙에 맞춤 */
+}
+
+.right-header {
+  display: flex;
+  align-items: center; /* 검색창과 로그인 버튼을 수직 중앙에 맞춤 */
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.search-container {
+  position: relative;
+  flex-grow: 1; /* 부모의 공간을 차지하도록 설정 */
+  max-width: 400px; /* 최대 너비를 설정 (필요에 따라 조정 가능) */
+  margin-left: 20px; /* 검색창과 내비게이션 사이의 간격 */
+}
+
+.search-input {
+  width: 100%; /* 부모 요소에 맞춰 100%로 설정 */
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #E20612;
+  box-shadow: 0 0 5px rgba(226, 6, 18, 0.5);
+}
+
+.material-icons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1.5rem;
-  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex; /* 내비게이션 바를 flex로 설정 */
+  align-items: center; /* 세로 정렬 */
 }
 
 .navbar ul {
@@ -37,22 +93,36 @@
 .navbar a {
   text-decoration: none;
   color: #ffffff;
-  transition: color 0.3s ease; /* 호버 시 색상 전환 */
+  transition: color 0.3s ease;
 }
 
-/* li 호버 효과 */
 .navbar li:hover a {
-  color: #E20612; /* 텍스트 색상 변경 */
-  border-bottom: 2px solid #E20612; /* 밑줄 추가 */
+  color: #E20612;
+  border-bottom: 2px solid #E20612;
 }
 
-/* 반응형 스타일 */
+.login-button {
+  padding: 0.5rem 1rem;
+  background-color: #E20612;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* 검색창과 로그인 버튼 사이에 간격 추가 */
+}
+
+.login-button:hover {
+  background-color: #a50f0f;
+}
+
 @media (max-width: 768px) {
   .navbar ul {
-    display: none; /* 기본적으로 숨김 */
-    flex-direction: column; /* 세로 방향으로 정렬 */
+    display: none;
+    flex-direction: column;
     position: absolute;
-    top: 60px; /* 헤더 높이에 따라 조정 */
+    top: 60px;
     left: 0;
     right: 0;
     background-color: #000000;
@@ -60,11 +130,20 @@
   }
 
   .navbar.active ul {
-    display: flex; /* 활성화 시 표시 */
+    display: flex;
   }
 
   .navbar-toggle {
-    display: block; /* 버튼 표시 */
+    display: block;
+    position: absolute; /* 버튼을 절대 위치로 설정 */
+    right: 20px; /* 오른쪽에서 20px 위치 */
+    top: 50%; /* 수직 중앙에 위치 */
+    transform: translateY(-50%); /* 수직 중앙 조정 */
+    cursor: pointer;
+  }
+
+  .search-container, .login-button {
+    display: none; /* 모바일에서는 검색창과 로그인 버튼 숨김 */
   }
 }
 
