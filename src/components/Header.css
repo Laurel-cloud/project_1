@@ -1,8 +1,9 @@
 .header {
   display: flex;
-  justify-content: space-between; /* 왼쪽과 오른쪽에 요소를 배치 */
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  height: 68px;
   background-color: rgba(0, 0, 0, 1);
   color: #fff;
   position: fixed;
@@ -10,22 +11,22 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
   transition: background-color 0.3s ease;
 }
 
 .header.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); /* 일관된 배경 투명도 */
 }
 
 .left-header {
   display: flex;
-  align-items: center; /* 로고와 내비게이션을 수직 중앙에 맞춤 */
+  align-items: center;
 }
 
 .right-header {
   display: flex;
-  align-items: center; /* 검색창과 로그인 버튼을 수직 중앙에 맞춤 */
+  align-items: center;
 }
 
 .logo-link {
@@ -43,13 +44,13 @@
 
 .search-container {
   position: relative;
-  flex-grow: 1; /* 부모의 공간을 차지하도록 설정 */
-  max-width: 400px; /* 최대 너비를 설정 (필요에 따라 조정 가능) */
-  margin-left: 20px; /* 검색창과 내비게이션 사이의 간격 */
+  flex-grow: 1;
+  max-width: 500px;
+  margin-left: 20px;
 }
 
 .search-input {
-  width: 100%; /* 부모 요소에 맞춰 100%로 설정 */
+  width: 100%;
   padding: 0.5rem 2.5rem 0.5rem 1rem;
   font-size: 1rem;
   color: #333;
@@ -76,14 +77,21 @@
 }
 
 .navbar {
-  display: flex; /* 내비게이션 바를 flex로 설정 */
-  align-items: center; /* 세로 정렬 */
+  display: flex;
+  align-items: center;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  background-color: transparent; /* 배경색을 투명으로 설정 */
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled .navbar ul {
+  background-color: transparent; /* 스크롤 시에도 배경색을 투명으로 유지 */
 }
 
 .navbar li {
@@ -110,7 +118,7 @@
   text-decoration: none;
   font-size: 1rem;
   transition: background-color 0.3s ease;
-  margin-left: 10px; /* 검색창과 로그인 버튼 사이에 간격 추가 */
+  margin-left: 10px;
 }
 
 .login-button:hover {
@@ -122,11 +130,14 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 68px;
     left: 0;
     right: 0;
-    background-color: #000000;
-    padding: 1rem;
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  .header.scrolled .navbar ul {
+    background-color: rgba(0, 0, 0, 0.8); /* 모바일에서도 동일한 투명도 */
   }
 
   .navbar.active ul {
@@ -135,15 +146,16 @@
 
   .navbar-toggle {
     display: block;
-    position: absolute; /* 버튼을 절대 위치로 설정 */
-    right: 20px; /* 오른쪽에서 20px 위치 */
-    top: 50%; /* 수직 중앙에 위치 */
-    transform: translateY(-50%); /* 수직 중앙 조정 */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
   }
 
-  .search-container, .login-button {
-    display: none; /* 모바일에서는 검색창과 로그인 버튼 숨김 */
+  .search-container,
+  .login-button {
+    display: none;
   }
 }
 

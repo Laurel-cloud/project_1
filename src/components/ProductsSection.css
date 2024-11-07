@@ -1,8 +1,8 @@
 .products {
-  padding: 2rem;
+  padding: 2rem 0;
   text-align: center;
   color: black;
-
+  overflow: hidden; /* 슬라이더가 부모 영역 밖으로 넘치지 않도록 설정 */
 }
 
 .products h2 {
@@ -11,24 +11,16 @@
   color: #fff;
 }
 
-.product-grid {
+.product-slider {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  /* min-width: 400px; */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 2rem; /* 좌우에 패딩을 추가하여 양 끝에서 여백이 나타나도록 */
+  scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
 }
 
-.product-item {
-  width: 300px;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  text-align: center;
+.product-slider::-webkit-scrollbar {
+  display: none; /* 스크롤바 숨김 */
 }
 
-.product-item img {
-  max-width: 100%;
-  border-radius: 8px;
-  /* margin-bottom: 1rem; */
-}
