@@ -1,8 +1,6 @@
-# React + Vite
+* 11.8 수정사항
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 화면 크기 키울 시 카테고리 이미지 크기 고정 X
+- 제품 이름이 길 때 화면에 잘리는 현상
+- 제품 더 추가해서 페이지 로드 오류 확인하기
+- 

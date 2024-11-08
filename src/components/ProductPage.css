@@ -1,0 +1,109 @@
+/* 기존 스타일 유지 */
+.product-page {
+  padding: 2rem;
+}
+
+/* 카테고리 섹션 */
+.product-categories {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 60px;
+}
+
+.product-categories h2 {
+  color: #fff; /* 하얀색 */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.category-item {
+  color: #fff; /* 기본 텍스트 색상 하얀색 */
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative; /* 밑줄을 위한 설정 */
+}
+
+.category-item:hover {
+  color: #E20612; /* 호버 시 빨간색으로 변경 */
+}
+
+.category-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.category-item:hover::after {
+  background-color: #E20612; /* 호버 시 밑줄 빨간색 */
+}
+
+/* 제품 섹션 */
+.featured-products {
+  text-align: center;
+}
+
+.featured-products h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff; /* 하얀색 */
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 280px; /* 고정 높이 설정 */
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+  width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞추되 */
+  height: 150px; /* 고정 높이 설정 */
+  object-fit: cover; /* 이미지가 부모 요소를 채우도록 설정 */
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  display: block; /* inline-block이나 block을 사용하여 레이아웃 제어 */
+}
+
+.product-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  flex-grow: 1; /* 제목 공간을 확보하여 가격이 하단에 고정되도록 함 */
+  margin: 0.5rem 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 두 줄까지만 표시 */
+  -webkit-box-orient: vertical;
+}
+
+.product-item p {
+  font-size: 1rem;
+  color: #333;
+  margin-top: auto; /* 가격을 하단에 고정 */
+}

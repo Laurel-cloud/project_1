@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import ProductsSection from "./components/ProductsSection";
 import Footer from "./components/Footer";
 import "./App.css";
+import ProductPage from "./components/ProductPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <HeroSection />
       <ProductsSection />
+      <ProductPage />
       <Footer />
     </>
   );
