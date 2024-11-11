@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import logo from "../assets/logo.png";
 
@@ -7,8 +7,16 @@ function Header() {
   const [showToggle, setShowToggle] = useState(window.innerWidth < 768);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const navRef = useRef(null); // 내비게이션 바의 참조
+
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
+  };
+
+  const closeNav = (e) => {
+    if (navRef.current && !navRef.current.contains(e.target)) {
+      setIsNavOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -27,10 +35,12 @@ function Header() {
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("click", closeNav); // 바깥 영역 클릭 시 내비게이션 닫기
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", closeNav);
     };
   }, []);
 
@@ -41,7 +51,7 @@ function Header() {
           <img src={logo} alt="Leica Logo" className="logo-image" />
         </a>
 
-        <div className={`navbar ${isNavOpen ? "active" : ""}`}>
+        <div className={`navbar ${isNavOpen ? "active" : ""}`} ref={navRef}>
           {showToggle && (
             <button className="navbar-toggle" onClick={toggleNav}>
               {isNavOpen ? "✖" : "☰"}

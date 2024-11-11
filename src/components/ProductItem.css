@@ -1,17 +1,20 @@
 .product-item-main {
+  display: flex;
+  flex-direction: column; /* 세로 방향 배치 */
+  justify-content: space-between; /* 상단 이미지와 제목, 하단 가격 */
   flex: 0 0 300px; /* 아이템의 너비 고정 */
   padding: 1rem;
   background-color: #f9f9f9;
   border-radius: 8px;
   text-align: center;
   scroll-snap-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 애니메이션 추가 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .product-item-main:hover {
-  transform: scale(1.05); /* 호버 시 약간 확대 */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 추가 */
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .product-item-main img {
@@ -24,11 +27,11 @@
   font-size: 1.2rem;
   margin: 0.5rem 0;
   color: #333;
-  margin-top: 1rem; /* 이미지와 제목 사이에 여백 추가 */
+  margin-top: 1rem;
 }
 
 .product-item-main p {
   font-size: 1rem;
   color: #333;
-  margin-top: 0.5rem; /* 제목과 가격 사이에 여백 추가 */
+  margin-top: auto; /* 가격을 항상 하단에 고정 */
 }

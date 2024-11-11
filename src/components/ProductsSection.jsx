@@ -9,9 +9,9 @@ function ProductsSection() {
     <section className="products">
       <h2>Our Products</h2>
       <div className="product-slider">
-        {productsData.map((product, index) => (
+        {productsData.map((product) => (
           <ProductItem
-            key={index}
+            key={product.id}
             imageSrc={product.imageSrc}
             title={product.title}
             price={product.price}
