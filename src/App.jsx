@@ -6,16 +6,23 @@ import ProductsSection from "./components/ProductsSection";
 import Footer from "./components/Footer";
 import "./App.css";
 import ProductPage from "./components/ProductPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <HeroSection />
-      <ProductsSection />
-      <ProductPage />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <ProductsSection />
+          </>
+        } />
+        <Route path="/products" element={<ProductPage />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

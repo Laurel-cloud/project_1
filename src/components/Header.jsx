@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import logo from "../assets/logo.png";
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [showToggle, setShowToggle] = useState(window.innerWidth < 768);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navRef = useRef(null); // 내비게이션 바의 참조
+  const navRef = useRef(null);
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
@@ -35,7 +36,7 @@ function Header() {
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("click", closeNav); // 바깥 영역 클릭 시 내비게이션 닫기
+    window.addEventListener("click", closeNav);
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -47,9 +48,9 @@ function Header() {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="left-header">
-        <a href="/" className="logo-link">
+        <Link to="/" className="logo-link">
           <img src={logo} alt="Leica Logo" className="logo-image" />
-        </a>
+        </Link>
 
         <div className={`navbar ${isNavOpen ? "active" : ""}`} ref={navRef}>
           {showToggle && (
@@ -59,16 +60,16 @@ function Header() {
           )}
           <ul>
             <li>
-              <a href="#">Products</a>
+              <Link to="/products">Products</Link>
             </li>
             <li>
-              <a href="#">Gallery</a>
+              <Link to="/gallery">Gallery</Link>
             </li>
             <li>
-              <a href="#">Store</a>
+              <Link to="/store">Store</Link>
             </li>
             <li>
-              <a href="#">Support</a>
+              <Link to="/support">Support</Link>
             </li>
           </ul>
         </div>
@@ -80,9 +81,9 @@ function Header() {
           <span className="material-icons">search</span>
         </div>
 
-        <a href="/login" className="login-button">
+        <Link to="/login" className="login-button">
           Login
-        </a>
+        </Link>
       </div>
     </header>
   );

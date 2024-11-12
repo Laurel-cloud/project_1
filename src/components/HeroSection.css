@@ -18,18 +18,24 @@
   margin-bottom: 2rem;
 }
 
-.hero button {
+.hero .btn {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: #000;
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease; /* 애니메이션 효과 추가 */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: inherit;
+  
+  
 }
 
 /* 호버 효과 */
-.hero button:hover {
+.hero .btn:hover {
   background-color: #E20612; /* 배경색 변경 */
   color: #000; /* 텍스트 색상 반전 */
   transform: scale(1.05); /* 약간 확대 */
