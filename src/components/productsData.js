@@ -4,7 +4,7 @@ const productsData = [
     imageSrc: "https://leica-camera.com/sites/default/files/styles/r_media_medium_mobile_4_3_x2/public/pm-18610-20000__M10_black.jpg?itok=K8QIQZ5c",
     title: "Leica M10",
     price: "$6995.00",
-    category: "camera" // 카테고리 추가
+    category: "camera"
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const productsData = [
     imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/960w/products/6566/19584/11826-01-Leica-Summicron-M-50mm_front__38026.1565014580.1280.1280__17510.1650985612.jpg?c=2",
     title: "Leica Summicron-M 50mm f/2",
     price: "$2795.00",
-    category: "lens" // 렌즈 카테고리
+    category: "lens"
   },
   {
     id: 7,
@@ -69,6 +69,42 @@ const productsData = [
     price: "$4295.00",
     category: "lens"
   },
+  // 추가된 악세서리 아이템
+  {
+    id: 11,
+    imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/6845/20008/19565-01-Leica-leather-wrist-strap-D-Lux_7-red__50049.1566849448.1280.1280__01671.1639697230.jpg?c=2",
+    title: "Leica Leather Wrist Strap",
+    price: "$125.00",
+    category: "accessory"
+  },
+  {
+    id: 12,
+    imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/7026/20387/Akademie_Cards_1__97263.1637029499.1280.1280__80587.1649295039.jpg?c=2",
+    title: "Leica Akademic Cards",
+    price: "$30.00",
+    category: "accessory"
+  },
+  {
+    id: 13,
+    imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/9751/27963/196-62_marker_metal_box_set_1__08975.1696453652.jpg?c=2",
+    title: "SOFORT Metal Marker Box",
+    price: "$30.00",
+    category: "accessory"
+  },
+  {
+    id: 14,
+    imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/9765/27986/19676_01_Leica_huefttasche_1920px__52448.1696458680.jpg?c=2",
+    title: "SOFORT Hip Bag in Black",
+    price: "180.00",
+    category: "accessory"
+  },
+  {
+    id: 15,
+    imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/6883/20068/C110081007_Leica-rope-key-chain-black_02__97684.1637022995.1280.1280__31149.1655915862.jpg?c=2",
+    title: "Leica Rope Key Chain",
+    price: "$40.00",
+    category: "accessory"
+  }
 ];
 
 export default productsData;

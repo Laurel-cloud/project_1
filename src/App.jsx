@@ -2,9 +2,11 @@
 import React from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import ImageComponent from "./components/ImageComponent";
 import ProductsSection from "./components/ProductsSection";
 import Footer from "./components/Footer";
 import "./App.css";
+
 import ProductPage from "./components/ProductPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -13,12 +15,16 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={
-          <>
-            <HeroSection />
-            <ProductsSection />
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection />
+              <ImageComponent />
+              <ProductsSection />
+            </>
+          }
+        />
         <Route path="/products" element={<ProductPage />} />
       </Routes>
       <Footer />

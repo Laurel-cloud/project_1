@@ -171,7 +171,18 @@
     transition: all 0.3s ease;
   }
 
-  .material-icons {
+  .navbar-toggle .material-icons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+
+  .search-container .material-icons {
     position: absolute;
     right: 10px;
     top: 50%;

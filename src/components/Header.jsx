@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import logo from "../assets/logo.png";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -55,7 +55,9 @@ function Header() {
         <div className={`navbar ${isNavOpen ? "active" : ""}`} ref={navRef}>
           {showToggle && (
             <button className="navbar-toggle" onClick={toggleNav}>
-              {isNavOpen ? "✖" : "☰"}
+              <span className="material-icons">
+                {isNavOpen ? "close" : "menu"}
+              </span>
             </button>
           )}
           <ul>
