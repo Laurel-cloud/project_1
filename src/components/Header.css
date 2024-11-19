@@ -61,7 +61,6 @@
   transition: all 0.3s ease;
 }
 
-
 .material-icons {
   position: absolute;
   right: 10px;
@@ -120,7 +119,6 @@
 .login-button:hover {
   background-color: #a50f0f;
 }
-/* 기존 스타일 유지 */
 
 @media (max-width: 768px) {
   .navbar ul {
@@ -148,6 +146,19 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    background-color: transparent; /* 배경 투명 */
+    border: none; /* 테두리 제거 */
+    color: #fff; /* 아이콘 색상 */
+    transition: color 0.3s ease; /* 색상 전환 효과 */
+  }
+
+  .navbar-toggle .material-icons {
+    font-size: 1.5rem;
+    color: #fff; /* 아이콘 색상 */
+  }
+
+  .navbar-toggle:hover .material-icons {
+    color: #E20612; /* 호버 시 색상 변경 */
   }
 
   /* 검색 칸을 왼쪽에 배치 */
@@ -170,17 +181,6 @@
     outline: none;
     transition: all 0.3s ease;
   }
-
-  .navbar-toggle .material-icons {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: #ffffff;
-    cursor: pointer;
-  }
-
 
   .search-container .material-icons {
     position: absolute;
