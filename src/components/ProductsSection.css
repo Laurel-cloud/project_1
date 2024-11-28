@@ -1,3 +1,5 @@
+/* src/components/ProductsSection.css */
+
 .products {
   padding: 2rem 0;
   text-align: center;
@@ -24,3 +26,25 @@
   display: none; /* 스크롤바 숨김 */
 }
 
+/* 좌우 버튼 스타일 */
+.products .slider-btn {
+  background:none;
+  border: none;
+  padding: 0.5rem 1rem ;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.products .slider-btn:hover {
+  color: #a50f0f;
+}
+
+.products .material-icons {
+  font-size: 2rem; /* 아이콘 크기 추가 조정 */
+}
+
+.products-btn button {
+  margin: 30px 100px; /* 좌우 버튼 사이에 10px 간격 추가 */
+}

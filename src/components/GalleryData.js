@@ -1,8 +1,8 @@
-import waveImage from "../assets/wave.jpeg";
-import waveImage2 from "../assets/wave2.jpeg";
-import tokyo from "../assets/tokyo.jpeg";
-import kimono from "../assets/kimono.jpeg";
-import sea from "../assets/sea.jpeg";
+import waveImage from "../assets/images/wave.jpeg";
+import waveImage2 from "../assets/images/wave2.jpeg";
+import tokyo from "../assets/images/tokyo.jpeg";
+import kimono from "../assets/images/kimono.jpeg";
+import sea from "../assets/images/sea.jpeg";
 
 const galleryData = [
   {

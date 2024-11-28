@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -9,6 +9,7 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navRef = useRef(null);
+  const location = useLocation(); // 현재 경로 정보 가져오기
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
@@ -44,6 +45,11 @@ function Header() {
       window.removeEventListener("click", closeNav);
     };
   }, []);
+
+  // 페이지 경로 변경 감지하여 메뉴 닫기
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [location.pathname]); // location.pathname 변경 시 실행
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>

@@ -69,7 +69,6 @@ const productsData = [
     price: "$4295.00",
     category: "lens"
   },
-  // 추가된 악세서리 아이템
   {
     id: 11,
     imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/6845/20008/19565-01-Leica-leather-wrist-strap-D-Lux_7-red__50049.1566849448.1280.1280__01671.1639697230.jpg?c=2",
@@ -95,7 +94,7 @@ const productsData = [
     id: 14,
     imageSrc: "https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/320w/products/9765/27986/19676_01_Leica_huefttasche_1920px__52448.1696458680.jpg?c=2",
     title: "SOFORT Hip Bag in Black",
-    price: "180.00",
+    price: "$180.00",
     category: "accessory"
   },
   {
